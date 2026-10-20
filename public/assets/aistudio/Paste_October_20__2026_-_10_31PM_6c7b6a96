@@ -1,0 +1,1117 @@
+# Frédéric Mazzella — Complete Project Documentation
+
+This is the detailed explanation of your Interactive Entrepreneur Showcase, prepared for the EDC JSSUN Technical Team Recruitment 2026 task. It covers the entrepreneur, the business story, every website section, the design decisions, the code structure, the interactions, the research sources, and how to explain the project to evaluators.
+
+The aim is not just to describe what the website looks like. You should be able to explain why you built it this way, how it works, what problem it solves, and what you learned while building it.
+
+# 1. Project overview
+
+PROJECT AT A GLANCE
+
+# Frédéric Mazzella: Turning Empty Seats into Opportunity
+
+An interactive entrepreneurial journey and venture showcase
+
+Purpose
+
+Present the story, ventures, business impact, and lessons of Frédéric Mazzella through an engaging website rather than a long, text-heavy biography.
+
+Technology
+
+HTML for structure, CSS for styling and responsive layout, and vanilla JavaScript for dynamic content and interactions.
+
+Main interaction
+
+Clickable timeline milestones and expandable venture cards.
+
+Research approach
+
+Prioritise official BlaBlaCar sources for the founder's story, company history, and ventures. Cross-check dates and claims before submission.
+
+## The idea behind the project
+
+Entrepreneurs are often presented through lists of achievements, company valuations, and personal biographies. That format tells visitors what happened, but it doesn't necessarily help them understand how an idea developed into a business.
+
+This project takes a different approach.
+
+It follows a simple narrative:
+
+Observation → Idea → Company → Expansion → Impact → Lessons
+
+The website begins with the everyday problem that inspired Mazzella's idea, takes visitors through the major stages of the business, introduces the ventures connected to it, and ends with lessons about entrepreneurship.
+
+The visitor can read the page from top to bottom or explore individual milestones and ventures based on their interests.
+
+# 2. Why Frédéric Mazzella?
+
+## Who is he?
+
+[FRANCE-ECONOMY-TRANSPORT-PORTRAIT](https://images.openai.com/static-rsc-4/OGWOm9oKQ84sZbB83A_hVE0zur-czNmNkwo2dusaCjQMZfmZY9NAktZqjsndaKyMtWVZRPjpqBjdAJH7T7mZaRQDiA3hYt_aEoAIFJ8s5LTgevp3hweFwvwYwGwXq8fCNuQG_YX0pG-Mg-4D3SBdLePm_NdSZj4CLYogagc2yxjrteJowKrpAJaHR__wGKFq?purpose=inline)
+
+Frédéric Mazzella is a French entrepreneur best known as a co-founder of BlaBlaCar. His entrepreneurial story centres on a straightforward idea: helping people share journeys by connecting drivers who have empty seats with passengers travelling in the same direction.
+
+His story is useful for studying how an everyday inconvenience can become the starting point for a technology-enabled business.
+
+## Why was he selected instead of Elon Musk?
+
+Elon Musk is a recognisable entrepreneur with several well-known ventures, but his story is a common choice for student projects. Mazzella offers a more focused case study that allows the website to examine one business model in greater depth.
+
+| Selection factor       | Why Mazzella fits                                                               |
+| ---------------------- | ------------------------------------------------------------------------------- |
+| Originality            | Less predictable than the most commonly selected technology founders            |
+| Clear origin story     | A practical travel problem leads to a business idea                             |
+| Business model         | Easy to explain how drivers, passengers, and a platform connect                 |
+| Entrepreneurial growth | The story includes company formation, expansion, and adjacent mobility services |
+| Social relevance       | Carpooling relates to travel costs, resource use, and mobility choices          |
+| Interactive potential  | The journey naturally fits a timeline, while the ventures fit expandable cards  |
+
+The choice is not based on claiming that Mazzella is more successful than Musk. It is based on the fact that his story provides a focused, coherent narrative for the requirements of this particular assignment.
+
+## The problem that inspired the business
+
+Imagine someone wants to travel from one city to another. Train tickets may be expensive or unavailable. At the same time, many people are already driving along that route with one or more empty seats.
+
+Two groups have different needs:
+
+- Drivers have spare capacity and may want to share their travel costs.
+- Passengers need a ride and may want a more affordable travel option.
+
+The opportunity is to connect them.
+
+A platform can help people discover compatible journeys, coordinate travel, and build trust through profiles, reviews, and other service features.
+
+This is the central business insight behind BlaBlaCar: unused capacity can become useful when the people who need it can find the people who have it.
+
+It is also a useful entrepreneurial lesson because the original insight is not a complicated invention. The value comes from identifying a problem and designing a system that helps people solve it.
+
+# 3. The entrepreneur's journey — complete explanation
+
+This is the most important research section because the task requires at least four significant milestones in chronological order.
+
+The timeline in the website uses four milestone cards. Each card represents a stage in the development of the idea, rather than just listing dates.
+
+## Milestone 1: 2003 — The original idea
+
+[Routes. Neige, verglas: la circulation ce dimanche en Alsace](https://images.openai.com/static-rsc-4/mP7_HsZ7DrljiIJiR4kLmltXM9XAr6VrS6Mgm-4zpdULFNoHrfh_mOWq8QMBOORPY0wXbJv4DDzpsrm8u1zm0KY9VEUhVMcyJSYS94LHEt80ZnKWyg53VqPgd8Y4fcM4hbk0p7lWOp36nJebOZTTsqQjdiPKXgAJyb3iUxkYhWY?purpose=inline)
+
+The problem
+
+Mazzella wanted to travel from Paris to Vendée to spend Christmas with his family, but the trains were fully booked. His sister eventually drove to pick him up. During the journey, he noticed how many cars on the road had only their driver in them.
+
+The opportunity
+
+He realised that spare seats in existing vehicles could potentially be made available to other people travelling in the same direction.
+
+Source: [BlaBlaCar's official company history](https://newsroom.blablacar.com/about-us/story?utm_source=chatgpt.com).
+
+This moment illustrates a fundamental entrepreneurial skill: problem identification.
+
+Rather than starting with a technology and looking for a use for it, Mazzella started with an experience and recognised an unmet need.
+
+For the website, this milestone introduces the central idea behind the entire project.
+
+## Milestone 2: 2006 — Turning the idea into a company
+
+The idea required more than recognising a problem. It needed a functioning service that people could use.
+
+According to BlaBlaCar's official history, Mazzella founded the company in 2006 under the name Covoiturage.fr, after a period of development. The early work involved building a platform to connect people offering rides with people seeking them.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
++1
+
+
+
+This stage represents the transition from an idea to execution.
+
+It also highlights a common reality of entrepreneurship: a promising concept must be translated into a usable product. That requires development, experimentation, coordination, and persistence.
+
+In the website, the 2006 milestone demonstrates how a personal observation developed into an actual business.
+
+## Milestone 3: 2007–2010 — Building the team and growing the platform
+
+A startup rarely succeeds through one person's effort alone. BlaBlaCar's story includes the contributions of co-founders Francis Nappez and Nicolas Brusson, who brought complementary technical and business experience to the company.
+
+During this period, the company developed its carpooling community, adopted the BlaBlaCar name, and expanded into Spain and the United Kingdom.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
++1
+
+
+
+This milestone demonstrates three important concepts:
+
+- Team building: People with complementary skills can solve different parts of the same business problem.
+- Product development: A platform needs to improve as users' needs become clearer.
+- Scalability: A service that works in one market may be adapted for other markets, provided the business can handle their differences.
+
+The lesson here is that an idea's potential is not enough. Building the right team and creating a service that people trust are also essential.
+
+## Milestone 4: 2018–2024 — Expanding into shared mobility
+
+BlaBlaCar gradually broadened its offering beyond long-distance carpooling. Its official history records the launch of BlaBlaCar Daily for commuter carpooling in 2018, expansion into bus travel in 2019, and the addition of train-ticket options in 2024.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
++1
+
+
+
+The strategic idea was to become a broader travel platform rather than focus exclusively on one type of journey.
+
+This illustrates business model expansion: an established service can use its existing community, technology, and market knowledge to address related needs.
+
+However, expansion also creates challenges. Different forms of travel have different operating requirements, partners, customer expectations, and regulations. Growth is not automatically successful simply because the original product works.
+
+### Why these four milestones work together
+
+### 01
+
+Identify
+
+Notice an everyday problem.
+
+### 02
+
+Build
+
+Turn the insight into a usable service.
+
+### 03
+
+Collaborate
+
+Develop the team and grow the community.
+
+### 04
+
+Expand
+
+Apply the core idea to related travel needs.
+
+The timeline therefore tells a complete entrepreneurial story: identifying a problem, developing a solution, growing a company, and extending its business model.
+
+# 4. Companies and ventures
+
+The showcase features two connected services. The purpose is not to claim that Mazzella independently founded every service, but to explain his connection to the business and how its offering developed.
+
+## Venture A: BlaBlaCar
+
+[BlaBlaCar se renueva y ofrece servicios complementarios de tren, autobús y coches compartidos](https://images.openai.com/static-rsc-4/cwRkB97Asx1cCWJE0oNzmScy6OwUEALYZG4lIxeGO9Hl5k8WJjf57TZtbnyBw-Tlx4lBbb7yaSo6XGsQIHkkbF66mkYyYYSHGbjjctLgp3hnPdSjz9cw40uXmrFVOpB2gNR0mPOm9SKaub0JgjM3ZQsYikLcBVIJMN7uKy2LcmM?purpose=inline)
+
+## BlaBlaCar
+
+Long-distance carpooling and travel platform
+
+BlaBlaCar connects drivers who have spare seats with passengers travelling along similar routes. Drivers can share eligible travel costs, while passengers can find rides that suit their plans.
+
+Mazzella's connection: He initiated the original idea and led the entrepreneurial journey. Francis Nappez and Nicolas Brusson were also co-founders and made important contributions to the company's technical and business development.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
++1
+
+
+
+[Official BlaBlaCar website](https://www.blablacar.com/?utm_source=chatgpt.com) · [Founder information](https://newsroom.blablacar.com/about-us/founders?utm_source=chatgpt.com)
+
+### How its business model works
+
+1. A driver plans a journey and has spare seats.
+2. The driver lists the journey on the platform.
+3. A passenger searches for a suitable route.
+4. The platform helps the driver and passenger find each other and coordinate the ride.
+5. The participants share the journey, and the driver can recover part of the travel cost.
+
+This is a simplified explanation; actual booking, payment, availability, and cancellation arrangements depend on the service's current rules.
+
+### What is the value proposition?
+
+A value proposition explains why someone would choose a product or service.
+
+| User            | Value offered                                             |
+| --------------- | --------------------------------------------------------- |
+| Driver          | An opportunity to share travel costs                      |
+| Passenger       | An alternative way to find a ride                         |
+| Platform        | A way to match people with compatible journeys            |
+| Wider community | Better use of available seats and more travel connections |
+
+The business depends on bringing enough drivers and passengers onto the platform. If there are many suitable rides, the platform becomes more useful to passengers; if there are more passengers, drivers may find it more worthwhile to list their journeys.
+
+This is an example of a network effect.
+
+## Venture B: BlaBlaCar Daily
+
+[BlaBlaCar Daily : la nouvelle application pour les trajets du quotidien - iPhoneSoft](https://images.openai.com/static-rsc-4/ikbNNoIogKAA8uY4jZBPtZ4_l4w8RRQWw5mYpHea12A4DGaGovL8jKb02l3aE6GyTaM6fH4lOY_R2yd8h5fW9SO7yrlHFvp13t9BlASnnnVvIcK6JrMzU7LPP7pt7-CN-y7qhWL2LGDG9XyGuWerVI76QC9p3aPzLAa5OKmQ_Pw?purpose=inline)
+
+## BlaBlaCar Daily
+
+Commuter carpooling
+
+BlaBlaCar Daily focuses on recurring, shorter-distance journeys such as commuting to work or study.
+
+Its connection to Mazzella's entrepreneurial journey: It extends the central carpooling concept into a different use case. The original principle of sharing spare seats is applied to everyday travel rather than only longer intercity trips.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
++1
+
+
+
+[BlaBlaCar Daily website](https://www.blablacar-daily.com/?utm_source=chatgpt.com) · [Company timeline](https://newsroom.blablacar.com/about-us/story?utm_source=chatgpt.com)
+
+### Why this extension matters
+
+The two services demonstrate how one core concept can serve different customer needs.
+
+- BlaBlaCar addresses planned trips between cities and destinations.
+- BlaBlaCar Daily addresses regular journeys, often connected to commuting.
+
+The underlying idea is similar, but the customer journey, frequency of use, and matching requirements can differ.
+
+This is an example of product diversification within a related market: expanding the offering while retaining a connection to the original business.
+
+# 5. Impact and achievements
+
+The assignment asks for two meaningful contributions. The website focuses on two that can be explained without overstating the entrepreneur's personal role.
+
+## Contribution 1: Making better use of existing vehicle capacity
+
+Cars often travel with unoccupied seats. Carpooling creates a mechanism through which those seats can be shared with other travellers.
+
+The potential benefits include:
+
+- Sharing fuel and other eligible travel costs.
+- Providing more options for people seeking a ride.
+- Making better use of vehicles already making a journey.
+- Connecting destinations that may be less convenient to reach using other travel options.
+
+This is a contribution of the platform and its users, not solely the personal achievement of one founder.
+
+BlaBlaCar publishes impact estimates on its official website, including figures for travel costs saved and emissions avoided. Such figures should always be presented with their reporting period and methodology where available, rather than treated as timeless or independently verified totals.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
++1
+
+
+
+## Contribution 2: Expanding access to shared travel options
+
+BlaBlaCar expanded beyond its original carpooling service into bus travel and train-ticket options. This development helps illustrate the potential of building a broader mobility platform around a focused initial idea.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
++1
+
+
+
+The broader contribution is the attempt to make multiple travel options discoverable through one platform.
+
+The important distinction is that BlaBlaCar's expansion is a company achievement involving teams, partners, and acquisitions—not an achievement attributable to Mazzella alone.
+
+# 6. Two entrepreneurial lessons
+
+These lessons connect the research to the purpose of the showcase.
+
+## Lesson 1: Start with a real problem
+
+Entrepreneurs do not always need to invent something completely new. Sometimes the opportunity lies in observing how people behave and identifying what is missing.
+
+Mazzella's story illustrates this approach: he noticed empty seats during a journey and considered how people travelling along similar routes might be connected.
+
+How to apply this lesson: Before developing an app or website, identify the problem, understand who experiences it, and test whether a solution would actually be useful.
+
+## Lesson 2: Trust and usability are part of the product
+
+A platform that connects strangers must do more than display information. People need enough confidence to use it.
+
+Trust can be supported through clear profiles, reviews, transparent terms, reliable communication, and a straightforward booking process.
+
+How to apply this lesson: When designing a digital product, consider what users need to feel safe and confident, not just what features the developer can build.
+
+These are practical interpretations of the business case, rather than claims that Mazzella has personally stated these exact lessons.
+
+# 7. Complete explanation of the website design
+
+The website is designed as a single-page editorial experience. It combines a clean visual style with a clear reading order, so visitors can understand the entrepreneur's story without navigating through multiple pages.
+
+## Overall visual identity
+
+Deep green
+
+\#176B57
+
+Lime
+
+\#D8F078
+
+Warm paper
+
+\#F7F5EF
+
+Coral accent
+
+Dark ink
+
+Card white
+
+### Why these colours?
+
+- Deep green: Represents travel, growth, and a connection to sustainability without making the entire page green.
+- Lime: Creates contrast for dates, highlights, and important details.
+- Warm off-white: Makes the page feel more editorial and less like a generic software dashboard.
+- Coral: Adds a small visual accent to guide attention.
+- Dark ink: Maintains readable text and strong contrast.
+
+The palette is a design decision inspired by the subject. It should not be presented as BlaBlaCar's official brand palette.
+
+## Typography and visual hierarchy
+
+The page uses a system sans-serif font stack, so it can render text without downloading a separate font file.
+
+The heading style uses large text, compact line spacing, and negative letter spacing. This creates a strong editorial title without requiring decorative fonts.
+
+The hierarchy is:
+
+1. Large entrepreneur name.
+2. Section headings.
+3. Card headings and milestone dates.
+4. Descriptions and supporting details.
+5. Source links and small metadata.
+
+This lets visitors scan the page quickly before deciding which sections to read.
+
+## Section-by-section design
+
+[Olivia Website Page Template for Webflow](https://images.openai.com/static-rsc-4/8xX9g21ZK4wWJzSLoeRvUxDM28CVLWX-MFAPZnqAdcDBnHxIQmbykCB0xyIljEliPTWlwPbA_VGLoEOivxbXC3btI4BvfDLDLrXTfih1FUBkEgsRHt0UH0IQiUS_mNIr8FtFQk2Rvrqyl8lwWun62OxYpJnUBsHL5VO8VRj47GE?purpose=inline)
+
+A. Navigation bar
+
+The top navigation contains links to Journey, Ventures, Impact, and Sources. Each link jumps to its corresponding section on the same page. The EDC JSSUN branding establishes the academic-project context.
+
+[Alec Witham Portfolio - Webflow](https://images.openai.com/static-rsc-4/zmdSASW5M_0h1QFhcU_hxCyN8wKGH7GTicnBA9uZDPuwmgSrPcVFmuIS2acC8RWfTqHq6NbmcrysdzgAqZ46-OkZn2XuOHqooCXwfDpXLyigJoBQU9Tz4mctJ8seWFhM03Vuz-RILUDkwDN-SLMJ1kikk2TtGcvaM6QkJUABgQU?purpose=inline)
+
+B. Introduction / hero
+
+The hero combines the entrepreneur's name, a short introduction, a primary call to action, and quick facts. The right-hand card uses initials and abstract shapes as a portrait placeholder. This avoids presenting an uncredited or inaccurate image as a real portrait.
+
+[About - Storytelling - Awwwards](https://images.openai.com/static-rsc-4/8-DtZh6ashA3XXQjyotPtsArLGKv3CMVj-0MheA7uCJ-D_1MZ9r77GQ5BRrQN6yQdaSMPns6TBpbgQXghEWHtBANP-PXw6--jb27v64VtPvMEr6D88UJRmhZDF_LcQtui8RT7nScdr9blClRliI4xsQc3MIqvYTfyccBencoBbg?purpose=inline)
+
+C. Journey timeline
+
+Four cards show the major stages of the business. Clicking a card updates the larger detail panel underneath it. The timeline uses a pale contrasting background to separate the historical narrative from the introduction.
+
+[Web Design & Brand Identity for Kind Studio :: Behance](https://images.openai.com/static-rsc-4/2Zcm1BeDCdUgtIEuJr0J8AFN0zTtlcRkF6V9F23EPzOfUeMsVmtpMU0U-lKDn_gnBk759yzZC6y-EXPVVrvXqJq-jcJQPjeFSA94Q7sYd-U3jEC1xpv2egmC_OwrnXF1qU0-8RrjSvh2TwvuWTXzJ8b05kElGuYTgK8aQaNGgAg?purpose=inline)
+
+D. Ventures
+
+Two cards introduce BlaBlaCar and BlaBlaCar Daily. Each card contains a service description, an explanation of the connection to the entrepreneur, an expandable detail area, and an official link.
+
+[Cards interaction - Awwwards](https://images.openai.com/static-rsc-4/5jiGUcth_u55MybkPnEor9nvLnc1BZgHqJZ3gZmfDKlUtFBPehk7mZlp4tkpn81Y4TqzEyfqFnRAHt78pteGhyB1d9lJhAFMgH3pwlLqE-RTGRbkvdzSW06jY3MovgxxWKJA7OGy4ImBSp1Il17GuC9eGPp76s2iglIYgPZuY3M?purpose=inline)
+
+E. Impact and lessons
+
+A dark green section creates visual contrast. Two impact cards describe contributions, while two lime cards present practical lessons. The change in background signals that the website is moving from the historical story to its meaning.
+
+[Portfolio Resource Download Sections: Minimalist Resource List by Shadcn UI Blocks | Stow](https://images.openai.com/static-rsc-4/nG-xp9VVGYJKN6HGIVDsGbekRSxwkFHDJAvSYzqZV607pEsF7psU1xUseeGj-16GP3B82pcZYUt_XINPQon9MCArm-FvXQ4TlN2MqLUOPI42EhLNbfUBcjpv5pXKpBSHrPbyTocFavjiXF6JjLfK6EZO-n2ZCO_PPoJxZL7DGNs?purpose=inline)
+
+F. Sources and credits
+
+This section links visitors to official company information and includes an AI-use disclosure. It also clarifies that the hero artwork is a placeholder.
+
+## Why use a single-page website?
+
+A single-page design is appropriate because the task is a compact showcase, not a large information portal.
+
+Its advantages are:
+
+- Visitors can explore the whole story without loading separate pages.
+- The navigation is easy to understand.
+- The timeline and venture cards can be interactive without complex routing.
+- The source code remains relatively small and manageable.
+- The project can be opened locally without installing a framework.
+
+The trade-off is that a long single page can require more scrolling. Section spacing, jump links, and concise cards help manage that problem.
+
+# 8. Technical implementation — how the code works
+
+The project uses three web technologies, all contained in one `index.html` file.
+
+| Technology | Responsibility                                  | Example from this project                                       |
+| ---------- | ----------------------------------------------- | --------------------------------------------------------------- |
+| HTML       | Defines the content and semantic structure      | `<header>`, `<main>`, `<section>`, `<article>`                  |
+| CSS        | Controls appearance and layout                  | Colours, typography, grids, cards, mobile breakpoints           |
+| JavaScript | Creates dynamic content and handles interaction | Timeline generation, active milestone, expandable venture cards |
+
+There is no React, database, backend, API, build system, or package installation. Those features are not needed for this assignment.
+
+## 8.1 HTML: the structure
+
+HTML defines what each part of the page means.
+
+For example:
+
+- `<header>` contains the navigation.
+- `<main>` contains the primary content.
+- `<section>` separates the major parts of the showcase.
+- `<article>` groups related information, such as a venture or impact card.
+- `<button>` creates an interactive control.
+- `<a>` creates a link to another page or section.
+- `<footer>` contains the closing project information.
+
+Semantic HTML makes the structure easier to understand for both people and assistive technologies.
+
+### Example: navigation link
+
+```
+<nav aria-label="Main navigation">
+  <a href="#journey">Journey</a>
+  <a href="#ventures">Ventures</a>
+  <a href="#impact">Impact</a>
+  <a href="#sources">Sources</a>
+</nav>
+```
+
+The link `href="#journey"` points to the element with `id="journey"`.
+
+When the visitor clicks it, the browser moves to that section. CSS adds smooth scrolling, unless the visitor's operating system requests reduced motion.
+
+## 8.2 CSS: layout and responsive design
+
+CSS styles the HTML elements.
+
+The project uses CSS Grid for the hero and card layouts, Flexbox for navigation and horizontal alignment, and media queries for smaller screens.
+
+For example:
+
+```
+.hero {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 58px;
+  align-items: center;
+}
+```
+
+This creates two columns. The first receives slightly more space than the second, so the text and introduction remain prominent while the portrait card still has room to stand out.
+
+The responsive rule is:
+
+```
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .venture-grid,
+  .impact-grid,
+  .lessons,
+  .sources-grid {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+When the viewport becomes narrower than 800 pixels, the hero becomes one column and several card layouts become more compact.
+
+A second breakpoint at 480 pixels adjusts navigation, timeline cards, the portrait placeholder, and spacing for smaller mobile screens.
+
+## 8.3 JavaScript: structured data
+
+One of the explicit technical requirements is that at least one section should be generated from an array or structured list.
+
+The project goes further: both the timeline and venture cards are generated from JavaScript arrays.
+
+Instead of writing four separate timeline cards manually in the HTML, the data is stored separately:
+
+```
+const milestones = [
+  {
+    year: "2003",
+    title: "An everyday problem sparks an idea",
+    short: "A missed train connection reveals an opportunity.",
+    detail: "The observation about empty seats inspired the idea."
+  },
+  {
+    year: "2006",
+    title: "The company takes shape",
+    short: "The service launches as Covoiturage.fr.",
+    detail: "The original idea became a company and a working service."
+  }
+];
+```
+
+This is a simplified excerpt; the actual project contains four milestone objects with longer descriptions.
+
+Each object represents one milestone. The properties are:
+
+- `year`: the time period shown on the card.
+- `title`: the milestone heading.
+- `short`: the brief description displayed on the card.
+- `detail`: the longer description shown when the card is selected.
+
+The data is separate from the page-generation logic, making it easier to maintain.
+
+### How the timeline is generated
+
+The code uses the array's `forEach()` method:
+
+```
+milestones.forEach((item, index) => {
+  const button = document.createElement("button");
+
+  button.className = "milestone";
+  button.type = "button";
+
+  button.innerHTML = `
+    <span class="year">${item.year}</span>
+    <h3>${item.title}</h3>
+    <p>${item.short}</p>
+  `;
+
+  timeline.appendChild(button);
+});
+```
+
+Here's what happens:
+
+1. `forEach()` visits each object in the array.
+2. `item` refers to the current milestone.
+3. `document.createElement("button")` creates a new HTML button.
+4. The class and type are assigned.
+5. A template literal inserts the current object's content into the button.
+6. `appendChild()` adds the button to the timeline container.
+
+The actual project also attaches a click handler to each button, sets the appropriate accessibility attributes, and updates the detail panel.
+
+### Why this approach is useful
+
+Suppose you want to add another milestone.
+
+With a data-driven implementation, you add another object to the array. The loop creates the card automatically.
+
+You don't have to copy and rewrite a separate HTML block, reducing repetitive code and making the content more consistent.
+
+This is a simple example of separating data from presentation.
+
+## 8.4 The interaction: clicking a milestone
+
+The timeline uses JavaScript event listeners to respond to clicks.
+
+When a milestone is clicked, the code:
+
+1. Removes the active styling from all milestone buttons.
+2. Changes their `aria-pressed` attributes to `false`.
+3. Applies the active styling to the selected button.
+4. Sets its `aria-pressed` attribute to `true`.
+5. Updates the detail panel's year, title, and description.
+
+The essential logic looks like this:
+
+```
+button.addEventListener("click", () => {
+  timeline.querySelectorAll(".milestone").forEach(card => {
+    card.classList.remove("active");
+    card.setAttribute("aria-pressed", "false");
+  });
+
+  button.classList.add("active");
+  button.setAttribute("aria-pressed", "true");
+
+  detailYear.textContent = item.year;
+  detailTitle.textContent = item.title;
+  detailCopy.textContent = item.detail;
+});
+```
+
+This demonstrates three fundamental JavaScript concepts:
+
+- DOM manipulation: Changing elements on the page.
+- Event handling: Running code in response to a click.
+- State representation: Showing which milestone is currently selected.
+
+The active state is represented through the `active` CSS class and `aria-pressed` attribute rather than a separate framework or database.
+
+## 8.5 The interaction: expandable venture cards
+
+Each venture card includes a button that reveals additional information.
+
+The code toggles a CSS class:
+
+```
+const isOpen = article.classList.toggle("open");
+```
+
+If the card did not have the class, `toggle()` adds it. If it already had the class, `toggle()` removes it.
+
+The CSS determines whether the additional description is visible:
+
+```
+.venture-extra {
+  display: none;
+}
+
+.venture.open .venture-extra {
+  display: block;
+}
+```
+
+The button's label and `aria-expanded` value are also updated so the control communicates whether its content is open.
+
+This is a lightweight alternative to building a more complicated modal or separate details page.
+
+## 8.6 How the two arrays fit together
+
+JavaScript data arrays
+
+`milestones` and `ventures`
+
+JavaScript loops
+
+Read each object and create the appropriate elements
+
+DOM elements
+
+Timeline buttons and venture cards
+
+User interaction
+
+Update the detail panel or expand a card
+
+This is the basic architecture of the project. The content is stored in structured form, JavaScript generates the elements, CSS controls their appearance, and event listeners make them interactive.
+
+# 9. Research methodology and source attribution
+
+Research accuracy is worth 20 marks in the evaluation, so this section deserves particular attention.
+
+The project uses BlaBlaCar's official newsroom as its primary research source. This is useful because the company publishes information about its founders, its history, and its services.
+
+## Sources used and what each supports
+
+1\. Founder biography
+
+Supports the founder's role, the origin of the idea, and the contributions of the co-founders.
+
+[Read the official founder profile](https://newsroom.blablacar.com/about-us/founders?utm_source=chatgpt.com)&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
+
+
+2\. Company history
+
+Supports the 2003 origin story, 2006 founding, early international expansion, and development into a broader mobility platform.
+
+[Read the official company timeline](https://newsroom.blablacar.com/about-us/story?utm_source=chatgpt.com)&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
+
+
+3\. Entrepreneurial lessons
+
+Provides additional context about experimentation, unsuccessful ideas, learning, and the development of BlaBlaCar.
+
+[Read the founder lessons article](https://newsroom.blablacar.com/inside-story/fail-learn-succeed?utm_source=chatgpt.com)&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
+
+
+4\. Company impact
+
+Provides the company's published impact figures and descriptions of its mobility offering. Any figures should be tied to the relevant reporting period.
+
+[Read the company overview](https://newsroom.blablacar.com/about-us?utm_source=chatgpt.com)&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
+
+
+5\. Expansion into train travel
+
+Supports the company's 2024 announcement about integrating train-ticket offers from Spanish operators.
+
+[Read the official announcement](https://newsroom.blablacar.com/news/blablacar-adds-train-booking-in-spain?utm_source=chatgpt.com)&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://newsroom.blablacar.com\&sz=32)
+
+BlaBlaCar
+
+
+
+## How to avoid inaccurate claims
+
+There are three important distinctions to maintain.
+
+First: the founder versus the company. Mazzella initiated the original idea, but BlaBlaCar's growth involved co-founders, employees, investors, partners, and users. The project should not attribute every company achievement to him personally.
+
+Second: company-reported figures versus independently verified results. BlaBlaCar publishes figures for savings and environmental impact. These are company-reported estimates and should be described that way unless independently verified evidence is available.
+
+Third: historical facts versus interpretation. Dates, founder roles, and launches are historical claims. Statements such as “trust is part of the product” are analytical lessons drawn from the business model. The website should not present an interpretation as a direct quotation from Mazzella.
+
+## Image and asset credits
+
+The current hero artwork uses a designed circle with the initials “FM.” It is a placeholder, not an actual portrait.
+
+This is a deliberate choice for a working first version because it avoids presenting a random image as the entrepreneur or using a photograph without clear attribution.
+
+If you replace it with a photograph, check:
+
+- Whether the image actually depicts Frédéric Mazzella.
+- Who owns the image and whether its use is permitted.
+- Whether the image requires a credit or licence notice.
+- Whether the image source should be listed in the README.
+
+The website uses CSS for most decorative visuals and does not depend on an icon library or external font service.
+
+# 10. User experience, accessibility, and usability
+
+The project should work for visitors who are not familiar with the entrepreneur, and it should be usable on both a desktop and a phone.
+
+## Navigation and readability
+
+The navigation provides direct links to all major sections. The content is divided into short descriptions, cards, and headings so visitors do not need to read the whole page to find relevant information.
+
+The main call to action, “Explore the journey,” directs visitors to the timeline. This creates a clear path from the introduction into the central content.
+
+## Keyboard and assistive technology support
+
+The implementation includes several useful accessibility practices:
+
+- Native buttons are used for clickable timeline and venture controls.
+- Native links are used for navigation and external sources.
+- `aria-label` provides accessible names for certain interface elements.
+- `aria-pressed` communicates which timeline button is selected.
+- `aria-expanded` communicates whether a venture card is open.
+- `aria-live="polite"` allows updates to the selected milestone's details to be announced by compatible assistive technologies.
+- `:focus-visible` styles help keyboard users identify the focused element.
+- The reduced-motion media query avoids forcing smooth scrolling and transitions on users who prefer reduced motion.
+
+These are helpful foundations, not a guarantee of complete accessibility. The finished page should still be tested with a keyboard and, if possible, a screen reader.
+
+## Responsive behaviour
+
+The page uses media queries to adapt to different viewport sizes.
+
+| Screen size  | Expected behaviour                       |
+| ------------ | ---------------------------------------- |
+| Desktop      | Two-column hero and four-column timeline |
+| Tablet       | One-column hero and two-column timeline  |
+| Small mobile | One-column cards and reduced spacing     |
+
+The actual transition depends on viewport width rather than the device name. A small browser window on a laptop may trigger the same layout as a phone.
+
+## Performance
+
+The website is deliberately lightweight:
+
+- No JavaScript framework is required.
+- No build tools need to run.
+- No API requests are needed for the main interactions.
+- There are no external JavaScript libraries.
+- Most decorative elements are CSS-based.
+
+This reduces setup complexity and makes the project easier to run locally.
+
+# 11. Project structure and setup
+
+The project contains two main files.
+
+frederic_mazzella_showcase/
+
+Main project folder
+
+index.html
+
+Page structure, styling, structured data, and JavaScript interactions.
+
+README.md
+
+Project description, instructions, sources, image credits, and AI-use disclosure.
+
+## How to run it
+
+1. Download the ZIP file and extract it.
+2. Open the extracted folder.
+3. Double-click `index.html`.
+4. The browser should display the website.
+5. Click each milestone and expand both venture cards to verify that the interactions work.
+
+You do not need to install Node.js, Python, React, or any other development framework to run this version.
+
+## How to edit the content
+
+To update a milestone, find the `milestones` array in the script near the bottom of `index.html`.
+
+Edit the appropriate object's `year`, `title`, `short`, or `detail` property.
+
+To update a venture, find the `ventures` array and edit its `name`, `tag`, `description`, `connection`, `url`, or `urlLabel` properties.
+
+The JavaScript loops create the cards from those arrays. This means you can add another entry without manually copying the full card structure.
+
+One thing to remember: the website's content and the code are currently in the same file. That is perfectly reasonable for a small assignment, but a larger project might separate the CSS and JavaScript into their own files.
+
+# 12. Testing checklist
+
+Before submission, test the page systematically rather than assuming that it works because it opens.
+
+## Pre-submission test plan
+
+0/19 checked
+
+Content
+
+The entrepreneur's name and introduction are visible.
+
+All four milestones appear in chronological order.
+
+Both venture cards show the correct titles and descriptions.
+
+Impact, lessons, and source sections are present.
+
+External source links open the intended websites.
+
+Interactions
+
+Clicking the first milestone displays its details.
+
+Clicking another milestone updates the detail panel.
+
+Only one timeline card appears selected at a time.
+
+Each venture card opens and closes independently.
+
+The venture button label and expanded state update correctly.
+
+Responsive layout
+
+The hero changes to one column on narrow screens.
+
+Timeline cards fit on a mobile screen without horizontal overflow.
+
+Navigation links remain usable at smaller widths.
+
+Text remains readable and cards do not overlap.
+
+Submission quality
+
+README includes run instructions and source links.
+
+The portrait placeholder is clearly identified as a placeholder.
+
+AI-use disclosure reflects the tools actually used.
+
+All historical claims and links have been checked.
+
+The project has been uploaded to the intended GitHub repository.
+
+If a test fails, fix it before submitting. In particular, check the external links and timeline content instead of testing only the appearance.
+
+# 13. How the project satisfies the EDC evaluation rubric
+
+The evaluation is out of 100 marks. Here is how the current implementation maps to each criterion and what you should do to strengthen it.
+
+| Evaluation criterion                 | Marks | How this project addresses it                                                                            |
+| ------------------------------------ | ----- | -------------------------------------------------------------------------------------------------------- |
+| Core sections and content            | 25    | Includes introduction, four milestones, two ventures, impact, lessons, and sources                       |
+| Accuracy and quality of sources      | 20    | Links to official BlaBlaCar sources; claims still need final verification                                |
+| Working interaction and usability    | 20    | Clickable timeline, expandable venture cards, navigation, responsive layout                              |
+| Visual hierarchy and navigation      | 15    | Editorial typography, colour contrast, section hierarchy, and responsive cards                           |
+| Code organisation / structured data  | 10    | Separate `milestones` and `ventures` arrays generate page content                                        |
+| Explanation, effort, and originality | 10    | Focused entrepreneur choice, custom visual identity, lightweight implementation, and documented approach |
+
+Important: These are alignment points, not a guaranteed score. Only the evaluators can award marks, and they may test the website, question the research, and ask you to explain the code.
+
+## What could improve the submission further?
+
+The current version covers the requirements, but there are several ways to make the work stronger.
+
+1\. Replace the portrait placeholder
+
+Use a verified, properly credited portrait of Mazzella. This would improve the introduction and make the entrepreneur immediately recognisable.
+
+2\. Verify every historical claim
+
+Check the milestone dates, co-founder roles, and venture descriptions against the official sources. A polished interface cannot compensate for incorrect research.
+
+3\. Test the mobile layout
+
+Check it at several viewport widths and use the keyboard to navigate the page. Correct any awkward wrapping or inaccessible interactions.
+
+4\. Publish it on GitHub
+
+Upload the source code and README to a public repository if that is appropriate for the recruitment submission. A live link is optional, but a clean repository makes the project easy to review.
+
+I would not add lots of animations, a chatbot, a database, or a complicated dashboard just to make the project look advanced. The assignment specifically values working fundamentals and the ability to explain your implementation.
+
+# 14. GitHub submission and deployment
+
+## Step 1: Create the repository
+
+Open [GitHub](https://github.com/?utm_source=chatgpt.com) and create a new repository named something like:
+
+`frederic-mazzella-showcase`
+
+Add a description such as:
+
+> An interactive entrepreneur showcase exploring Frédéric Mazzella's journey, BlaBlaCar, and the lessons behind the business.
+
+You can keep the repository public if you want the EDC evaluators to view it without requesting access.
+
+## Step 2: Upload the files
+
+Upload:
+
+- `index.html`
+- `README.md`
+
+Keep the file names unchanged. In particular, GitHub Pages expects the main page to be named `index.html` when serving the site from the repository root.
+
+## Step 3: Enable GitHub Pages
+
+1. Open your repository on GitHub.
+2. Go to Settings → Pages.
+3. Under the build and deployment settings, choose deployment from a branch.
+4. Select the `main` branch and the root (`/`) folder, then save.
+5. Wait for the deployment to finish and open the published URL shown in the Pages settings.
+
+GitHub's current instructions are available in the [official GitHub Pages documentation](https://docs.github.com/en/pages?utm_source=chatgpt.com).
+
+After publishing, open the live site in an incognito window or another browser to check that it loads without relying on your local files.
+
+## Step 4: Prepare the submission
+
+Your submission can include:
+
+- Repository: the GitHub URL.
+- Live website: the GitHub Pages URL, if deployed.
+- README: instructions and sources.
+- AI disclosure: an accurate note describing the assistance used.
+
+Don't submit a link until you've verified that it works.
+
+# 15. AI-use disclosure
+
+The task specifically requests a short note disclosing any AI tools used.
+
+Since AI assistance has been used to help create and document this project, you should disclose that honestly. Do not claim that every line was written independently if that is not what happened.
+
+Here is a draft you can adapt.
+
+### AI Tools Disclosure
+
+AI assistance was used to help plan the website structure, draft and organise content, develop the HTML/CSS/JavaScript implementation, and prepare project documentation. Official BlaBlaCar sources are provided for factual verification. I reviewed the implementation and will test the interactions, verify the research, and ensure I can explain the code and design decisions before submission.
+
+Only keep the statements about reviewing, testing, and understanding the implementation if you actually complete those steps. If you use additional AI tools, include them if the submission rules require naming them.
+
+# 16. Viva preparation: questions the EDC team may ask
+
+This is particularly important. The assignment says that you should be ready to explain your approach and demonstrate the main features.
+
+The following questions are tailored to this project.
+
+1\. Why did you choose Frédéric Mazzella?
+
+I chose him because his entrepreneurial journey starts with a clear, relatable problem and shows how that insight developed into a business. BlaBlaCar also provides a focused case study for explaining business models, teamwork, trust, and expansion.
+
+2\. What problem does your website solve?
+
+3\. Which technologies did you use?
+
+4\. Why didn't you use React?
+
+5\. What is an array in JavaScript?
+
+6\. What does forEach() do?
+
+7\. What is the DOM?
+
+8\. How does the timeline interaction work?
+
+9\. How do the venture cards expand?
+
+10\. What does responsive design mean?
+
+11\. Why is the website single-page?
+
+12\. How did you research the content?
+
+13\. What is a network effect in this example?
+
+14\. What is the main limitation of your project?
+
+15\. What would you improve with more time?
+
+## How to demonstrate the project in front of an evaluator
+
+A clear demonstration can take around two minutes.
+
+1. Introduce the entrepreneur. Explain the empty-seat problem and why you selected this story.
+2. Demonstrate the timeline. Click a later milestone and show that the detail panel changes.
+3. Demonstrate the ventures. Expand each venture card and open its official link.
+4. Explain the code. Show the `milestones` array, the `forEach()` loop, and the event listener responsible for updating the timeline.
+5. Explain your design decisions. Briefly discuss the colours, hierarchy, and mobile layout.
+6. Show your research. Open the sources section and explain how you distinguish historical facts from interpretations and company-reported impact.
+
+Avoid memorising the answers word for word. It is better to understand each concept and explain it naturally.
+
+# 17. What this project demonstrates about your skills
+
+The purpose of the task is to assess practical skills, not just the finished interface.
+
+This project can demonstrate several relevant fundamentals:
+
+- Research: Finding credible sources and organising factual information.
+- Product thinking: Deciding how visitors should navigate and consume the content.
+- HTML: Creating a meaningful page structure.
+- CSS: Building a visual hierarchy and adapting layouts to different screens.
+- JavaScript: Using arrays, objects, loops, event listeners, and DOM manipulation.
+- Usability: Providing controls with clear labels and predictable behaviour.
+- Documentation: Explaining how to run the project and where its content comes from.
+- Critical thinking: Recognising the limits of company-reported data and attributing achievements accurately.
+
+The strongest part of this project is not the colour palette by itself. It is the connection between the subject, the information structure, and the interaction: the timeline follows the entrepreneur's development, and the venture cards let visitors explore how the original idea expanded.
+
+## Final submission checklist
+
+- Download and extract the project ZIP.
+- Run `index.html` and test every interactive element.
+- Verify all historical dates and source links.
+- Decide whether to add a verified, credited portrait.
+- Ensure the README is included.
+- Update the AI disclosure to reflect your actual work.
+- Upload the source files to GitHub.
+- Deploy the site if you want to provide a live URL.
+- Practise explaining the array, `forEach()`, DOM manipulation, event listeners, and responsive CSS.
+- Make sure you can explain the entire project without relying on memorised descriptions.
+
+My final advice: don't make the project more complicated just to impress the EDC team. A well-researched, functional website that you understand and can confidently explain is a stronger submission than a flashy website full of features you cannot justify.
