@@ -165,7 +165,7 @@ export const TimelineSection: React.FC = () => {
               <div className="lg:col-span-5 flex flex-col gap-4">
                 <div className="rounded-xl overflow-hidden border border-zinc-800 relative aspect-video sm:aspect-[4/3] bg-zinc-950">
                   <img
-                    src="/src/assets/images/blablacar_journey_concept_1792515909674.jpg"
+                    src="./assets/images/blablacar_journey_concept_1792515909674.jpg"
                     alt="Atmospheric European highway at dusk representing BlaBlaCar journeys"
                     referrerPolicy="no-referrer"
                     className="h-full w-full object-cover"

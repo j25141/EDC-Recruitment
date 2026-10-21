@@ -77,7 +77,7 @@ export const Hero: React.FC = () => {
               {/* Portrait Image */}
               <div className="aspect-square relative overflow-hidden bg-zinc-950">
                 <img
-                  src="/src/assets/images/hero_mazzella_portrait_1792515908692.jpg"
+                  src="./assets/images/hero_mazzella_portrait_1792515908692.jpg"
                   alt="Portrait of Frédéric Mazzella, co-founder of BlaBlaCar"
                   referrerPolicy="no-referrer"
                   className="h-full w-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-700"

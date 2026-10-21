@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 
-interface TrailPoint {
+interface NodePoint {
   x: number;
   y: number;
-  age: number;
+  vx: number;
+  vy: number;
 }
 
 interface StrandConfig {
@@ -12,61 +13,67 @@ interface StrandConfig {
   idleRadius: number;
   color: (alpha: number) => string;
   glowColor: string;
-  coreColor: string;
   width: number;
   glowSize: number;
+  spring: number;
+  friction: number;
 }
 
 const STRANDS_CONFIG: StrandConfig[] = [
   {
-    offsetDistance: -24,
+    offsetDistance: -22,
     idleAngle: 0,
-    idleRadius: 18,
+    idleRadius: 16,
     color: (a) => `rgba(16, 185, 129, ${a * 0.75})`,
     glowColor: '#10b981',
-    coreColor: 'rgba(255, 255, 255, 0.85)',
     width: 3.2,
-    glowSize: 12
+    glowSize: 12,
+    spring: 0.28,
+    friction: 0.72
   },
   {
-    offsetDistance: -12,
+    offsetDistance: -11,
     idleAngle: (Math.PI * 2) / 5,
-    idleRadius: 14,
+    idleRadius: 12,
     color: (a) => `rgba(34, 197, 94, ${a * 0.85})`,
     glowColor: '#22c55e',
-    coreColor: 'rgba(255, 255, 255, 0.9)',
-    width: 3.6,
-    glowSize: 14
+    width: 3.5,
+    glowSize: 14,
+    spring: 0.29,
+    friction: 0.71
   },
   {
     offsetDistance: 0,
     idleAngle: (Math.PI * 4) / 5,
-    idleRadius: 10,
+    idleRadius: 8,
     color: (a) => `rgba(74, 222, 128, ${a * 0.95})`,
     glowColor: '#4ade80',
-    coreColor: '#ffffff',
-    width: 4.0,
-    glowSize: 16
+    width: 3.8,
+    glowSize: 16,
+    spring: 0.31,
+    friction: 0.70
   },
   {
-    offsetDistance: 12,
+    offsetDistance: 11,
     idleAngle: (Math.PI * 6) / 5,
-    idleRadius: 14,
+    idleRadius: 12,
     color: (a) => `rgba(134, 239, 172, ${a * 0.85})`,
     glowColor: '#86efac',
-    coreColor: 'rgba(255, 255, 255, 0.9)',
-    width: 3.6,
-    glowSize: 14
+    width: 3.5,
+    glowSize: 14,
+    spring: 0.29,
+    friction: 0.71
   },
   {
-    offsetDistance: 24,
+    offsetDistance: 22,
     idleAngle: (Math.PI * 8) / 5,
-    idleRadius: 18,
+    idleRadius: 16,
     color: (a) => `rgba(5, 150, 105, ${a * 0.75})`,
     glowColor: '#059669',
-    coreColor: 'rgba(255, 255, 255, 0.85)',
     width: 3.2,
-    glowSize: 12
+    glowSize: 12,
+    spring: 0.28,
+    friction: 0.72
   }
 ];
 
@@ -84,110 +91,79 @@ export const CursorRibbon: React.FC = () => {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    const MAX_POINTS = 30;
-    const MAX_AGE = 45; // Frames before fading out completely
+    const NODES_PER_STRAND = 26;
 
-    // Independent point history for each of the 5 strands
-    const strandTrails: TrailPoint[][] = STRANDS_CONFIG.map(() => []);
-
+    // Mouse state
     const mouse = {
       x: -100,
       y: -100,
-      lastX: -100,
-      lastY: -100,
+      targetX: -100,
+      targetY: -100,
       vx: 0,
       vy: 0,
-      isMoving: false
+      nx: 0,
+      ny: 1,
+      targetNx: 0,
+      targetNy: 1,
+      isMoving: false,
+      opacity: 0
     };
 
-    let idleTimer: NodeJS.Timeout | null = null;
+    // Initialize 5 independent fluid node chains
+    const strandsNodes: NodePoint[][] = STRANDS_CONFIG.map(() =>
+      Array.from({ length: NODES_PER_STRAND }, () => ({
+        x: -100,
+        y: -100,
+        vx: 0,
+        vy: 0
+      }))
+    );
+
+    let idleTimeout: NodeJS.Timeout | null = null;
+    let initialized = false;
 
     const handleMouseMove = (e: MouseEvent) => {
-      const currentX = e.clientX;
-      const currentY = e.clientY;
+      const curX = e.clientX;
+      const curY = e.clientY;
 
-      mouse.isMoving = true;
-      if (idleTimer) clearTimeout(idleTimer);
-      idleTimer = setTimeout(() => {
-        mouse.isMoving = false;
-      }, 100);
+      if (!initialized) {
+        mouse.x = curX;
+        mouse.y = curY;
+        mouse.targetX = curX;
+        mouse.targetY = curY;
 
-      // Compute velocity vector
-      let vx = 0;
-      let vy = 0;
-      let dist = 0;
-
-      if (mouse.lastX > 0 && mouse.lastY > 0) {
-        vx = currentX - mouse.lastX;
-        vy = currentY - mouse.lastY;
-        dist = Math.sqrt(vx * vx + vy * vy);
+        // Initialize all strand nodes at cursor position
+        STRANDS_CONFIG.forEach((strand, sIdx) => {
+          strandsNodes[sIdx].forEach((node) => {
+            node.x = curX + strand.offsetDistance;
+            node.y = curY;
+          });
+        });
+        initialized = true;
       }
 
-      // Smooth normal vector perpendicular to direction of movement
-      let nx = 0;
-      let ny = 0;
+      const dx = curX - mouse.targetX;
+      const dy = curY - mouse.targetY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
 
       if (dist > 1.5) {
-        // Perpendicular unit vector (-vy, vx)
-        nx = -vy / dist;
-        ny = vx / dist;
-        mouse.vx = vx;
-        mouse.vy = vy;
-      } else {
-        // Keep previous or default orientation
-        nx = 0;
-        ny = 1;
+        // Smooth perpendicular normal vector
+        mouse.targetNx = -dy / dist;
+        mouse.targetNy = dx / dist;
       }
 
-      // Populate each of the 5 strands at its distinct separated offset
-      STRANDS_CONFIG.forEach((strand, idx) => {
-        const trail = strandTrails[idx];
+      mouse.targetX = curX;
+      mouse.targetY = curY;
+      mouse.isMoving = true;
 
-        // Separation: Perpendicular offset when moving + subtle radial dispersion so they never merge
-        const offsetX = nx * strand.offsetDistance + Math.cos(strand.idleAngle) * (strand.idleRadius * 0.5);
-        const offsetY = ny * strand.offsetDistance + Math.sin(strand.idleAngle) * (strand.idleRadius * 0.5);
-
-        const strandTargetX = currentX + offsetX;
-        const strandTargetY = currentY + offsetY;
-
-        // If mouse moved a noticeable distance, interpolate intermediate points for buttery smoothness
-        if (mouse.lastX > 0 && mouse.lastY > 0 && dist > 4) {
-          const steps = Math.min(Math.floor(dist / 6), 3);
-          const prevStrandX = mouse.lastX + offsetX;
-          const prevStrandY = mouse.lastY + offsetY;
-
-          for (let s = 1; s <= steps; s++) {
-            const t = s / (steps + 1);
-            trail.unshift({
-              x: prevStrandX + (strandTargetX - prevStrandX) * t,
-              y: prevStrandY + (strandTargetY - prevStrandY) * t,
-              age: 0
-            });
-          }
-        }
-
-        trail.unshift({
-          x: strandTargetX,
-          y: strandTargetY,
-          age: 0
-        });
-
-        // Cap length
-        if (trail.length > MAX_POINTS) {
-          trail.length = MAX_POINTS;
-        }
-      });
-
-      mouse.lastX = currentX;
-      mouse.lastY = currentY;
-      mouse.x = currentX;
-      mouse.y = currentY;
+      if (idleTimeout) clearTimeout(idleTimeout);
+      idleTimeout = setTimeout(() => {
+        mouse.isMoving = false;
+      }, 120);
     };
 
     const handleMouseLeave = () => {
       mouse.isMoving = false;
-      mouse.lastX = -100;
-      mouse.lastY = -100;
     };
 
     const handleResize = () => {
@@ -203,64 +179,95 @@ export const CursorRibbon: React.FC = () => {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Render each of the 5 distinct strands independently
-      STRANDS_CONFIG.forEach((config, idx) => {
-        const trail = strandTrails[idx];
+      // Smoothly fade in when moving, and gently fade out when idle
+      if (mouse.isMoving) {
+        mouse.opacity = Math.min(1, mouse.opacity + 0.12);
+      } else {
+        mouse.opacity = Math.max(0, mouse.opacity - 0.035);
+      }
 
-        // Age points so they smoothly fade out when idle
-        for (let i = trail.length - 1; i >= 0; i--) {
-          trail[i].age += 1;
-          if (trail[i].age > MAX_AGE) {
-            trail.splice(i, 1);
+      // Buttery smooth lerping for mouse position and normal vector
+      mouse.x += (mouse.targetX - mouse.x) * 0.35;
+      mouse.y += (mouse.targetY - mouse.y) * 0.35;
+
+      mouse.nx += (mouse.targetNx - mouse.nx) * 0.18;
+      mouse.ny += (mouse.targetNy - mouse.ny) * 0.18;
+
+      // Normalize smoothed normal vector
+      const nLen = Math.sqrt(mouse.nx * mouse.nx + mouse.ny * mouse.ny);
+      const nx = nLen > 0.001 ? mouse.nx / nLen : 0;
+      const ny = nLen > 0.001 ? mouse.ny / nLen : 1;
+
+      // Only simulate and draw if opacity is visible
+      if (mouse.opacity > 0.01 && mouse.x > 0) {
+        ctx.save();
+        ctx.globalCompositeOperation = 'lighter';
+
+        STRANDS_CONFIG.forEach((strand, sIdx) => {
+          const nodes = strandsNodes[sIdx];
+
+          // Compute target position for the head node of this strand
+          const offsetX = nx * strand.offsetDistance + Math.cos(strand.idleAngle) * (strand.idleRadius * 0.35);
+          const offsetY = ny * strand.offsetDistance + Math.sin(strand.idleAngle) * (strand.idleRadius * 0.35);
+
+          const targetHeadX = mouse.x + offsetX;
+          const targetHeadY = mouse.y + offsetY;
+
+          // Head node glides toward target with high-precision spring
+          nodes[0].vx = (nodes[0].vx + (targetHeadX - nodes[0].x) * strand.spring) * strand.friction;
+          nodes[0].vy = (nodes[0].vy + (targetHeadY - nodes[0].y) * strand.spring) * strand.friction;
+          nodes[0].x += nodes[0].vx;
+          nodes[0].y += nodes[0].vy;
+
+          // Each trailing node follows the previous node with smooth fluid inertia
+          for (let i = 1; i < NODES_PER_STRAND; i++) {
+            const prev = nodes[i - 1];
+            const curr = nodes[i];
+
+            // Soft progressive damping creates a silky trailing wave
+            const chainSpring = strand.spring * (1 - (i / NODES_PER_STRAND) * 0.35);
+            curr.vx = (curr.vx + (prev.x - curr.x) * chainSpring) * strand.friction;
+            curr.vy = (curr.vy + (prev.y - curr.y) * chainSpring) * strand.friction;
+            curr.x += curr.vx;
+            curr.y += curr.vy;
           }
-        }
 
-        // Only draw if strand has at least 2 points
-        if (trail.length >= 2) {
-          ctx.save();
-          ctx.globalCompositeOperation = 'lighter';
-
-          // Calculate current head opacity based on age
-          const alpha = Math.max(0, 1 - trail[0].age / MAX_AGE);
-
-          // Build smooth quadratic curve path
+          // Render fluid Catmull-Rom spline with smooth tapering
           ctx.beginPath();
           ctx.lineCap = 'round';
           ctx.lineJoin = 'round';
-          ctx.moveTo(trail[0].x, trail[0].y);
+          ctx.moveTo(nodes[0].x, nodes[0].y);
 
-          for (let i = 0; i < trail.length - 1; i++) {
-            const p0 = trail[i];
-            const p1 = trail[i + 1];
-            const midX = (p0.x + p1.x) / 2;
-            const midY = (p0.y + p1.y) / 2;
-            ctx.quadraticCurveTo(p0.x, p0.y, midX, midY);
+          for (let i = 0; i < NODES_PER_STRAND - 1; i++) {
+            const xc = (nodes[i].x + nodes[i + 1].x) / 2;
+            const yc = (nodes[i].y + nodes[i + 1].y) / 2;
+            ctx.quadraticCurveTo(nodes[i].x, nodes[i].y, xc, yc);
           }
 
-          // 1. Outer neon glow for this distinct strand
-          ctx.lineWidth = config.width * 2.2;
-          ctx.strokeStyle = config.color(alpha * 0.45);
-          ctx.shadowColor = config.glowColor;
-          ctx.shadowBlur = config.glowSize;
+          // 1. Soft atmospheric neon glow
+          ctx.lineWidth = strand.width * 2.4;
+          ctx.strokeStyle = strand.color(mouse.opacity * 0.45);
+          ctx.shadowColor = strand.glowColor;
+          ctx.shadowBlur = strand.glowSize;
           ctx.stroke();
 
-          // 2. Focused vibrant body
-          ctx.lineWidth = config.width;
-          ctx.strokeStyle = config.color(alpha);
-          ctx.shadowColor = config.glowColor;
-          ctx.shadowBlur = config.glowSize * 0.5;
+          // 2. Focused luminous strand body
+          ctx.lineWidth = strand.width;
+          ctx.strokeStyle = strand.color(mouse.opacity * 0.95);
+          ctx.shadowColor = strand.glowColor;
+          ctx.shadowBlur = strand.glowSize * 0.5;
           ctx.stroke();
 
-          // 3. Bright core filament
-          ctx.lineWidth = Math.max(1, config.width * 0.35);
-          ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.85})`;
+          // 3. Ultra-fine bright highlight
+          ctx.lineWidth = Math.max(1, strand.width * 0.32);
+          ctx.strokeStyle = `rgba(255, 255, 255, ${mouse.opacity * 0.85})`;
           ctx.shadowColor = '#ffffff';
-          ctx.shadowBlur = 4;
+          ctx.shadowBlur = 3;
           ctx.stroke();
+        });
 
-          ctx.restore();
-        }
-      });
+        ctx.restore();
+      }
 
       animationFrameId = requestAnimationFrame(render);
     };
@@ -274,7 +281,7 @@ export const CursorRibbon: React.FC = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseleave', handleMouseLeave);
       window.removeEventListener('resize', handleResize);
-      if (idleTimer) clearTimeout(idleTimer);
+      if (idleTimeout) clearTimeout(idleTimeout);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

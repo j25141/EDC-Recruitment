@@ -96,7 +96,7 @@ export const BentoHome: React.FC = () => {
           {/* Photo container with zoom on hover */}
           <div className="relative rounded-2xl overflow-hidden border border-zinc-800 aspect-[4/3] bg-zinc-900 mt-2">
             <img
-              src="/src/assets/images/hero_mazzella_portrait_1792515908692.jpg"
+              src="./assets/images/hero_mazzella_portrait_1792515908692.jpg"
               alt="Frédéric Mazzella portrait"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
@@ -130,7 +130,7 @@ export const BentoHome: React.FC = () => {
           {/* Interactive Media Container with glowing pulse */}
           <div className="relative rounded-2xl overflow-hidden border border-zinc-800 aspect-video bg-zinc-900 group/img">
             <img
-              src="/src/assets/images/blablacar_journey_concept_1792515909674.jpg"
+              src="./assets/images/blablacar_journey_concept_1792515909674.jpg"
               alt="Shared road journeys across Europe"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700"

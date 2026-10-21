@@ -96,7 +96,7 @@ export const ImpactSection: React.FC = () => {
         <div className="mb-16 rounded-2xl overflow-hidden border border-zinc-800 relative bg-zinc-950">
           <div className="aspect-[21/9] sm:aspect-[24/9] w-full relative">
             <img
-              src="/src/assets/images/sustainable_transit_network_1792515908688.jpg"
+              src="./assets/images/sustainable_transit_network_1792515908688.jpg"
               alt="Multi-modal transit network hub connecting high-speed rail and shared carpooling"
               referrerPolicy="no-referrer"
               className="h-full w-full object-cover opacity-80"

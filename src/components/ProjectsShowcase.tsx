@@ -11,7 +11,7 @@ const PROJECTS_DATA = [
     category: 'SHARING ECONOMY',
     title: 'BlaBlaCar Platform',
     subtitle: 'Global Long-Distance Carpooling & Multi-Modal Network',
-    image: '/src/assets/images/blablacar_journey_concept_1792515909674.jpg',
+    image: './assets/images/blablacar_journey_concept_1792515909674.jpg',
     description: 'Connecting over 100 million members across 21 countries. Elevating private vehicle occupancy to 1.9 persons and saving 2M+ tons of CO2 annually.',
     tags: ['NextGen Mobility', 'Trust Architecture', 'Marketplaces'],
     url: 'https://www.blablacar.com'
@@ -23,7 +23,7 @@ const PROJECTS_DATA = [
     category: 'COMMUTER WEB & MOBILE',
     title: 'BlaBlaCar Daily',
     subtitle: 'Suburban Commuter Carpooling & Corporate Subsidies',
-    image: '/src/assets/images/hero_mazzella_portrait_1792515908692.jpg',
+    image: './assets/images/hero_mazzella_portrait_1792515908692.jpg',
     description: 'Transforming daily home-to-work routines. Over 500+ corporate campus integrations subsidized by local French transport authorities and CEE certificates.',
     tags: ['Daily Commutes', 'Smart Routing', 'Municipal Transit'],
     url: 'https://www.blablacar-daily.com'
@@ -35,7 +35,7 @@ const PROJECTS_DATA = [
     category: 'TRANSIT INFRASTRUCTURE',
     title: 'Multi-Modal Rail & Bus Hub',
     subtitle: 'Integrated European Rail and Long-Distance Coaches',
-    image: '/src/assets/images/sustainable_transit_network_1792515908688.jpg',
+    image: './assets/images/sustainable_transit_network_1792515908688.jpg',
     description: 'Uniting high-speed train operators (Renfe, Iryo, Ouigo) with regional long-distance coaches (BlaBlaCar Bus) into a single unified booking platform.',
     tags: ['Multi-Modal API', 'Rail Booking', 'European Corridors'],
     url: 'https://newsroom.blablacar.com/news/blablacar-adds-train-booking-in-spain'
@@ -47,7 +47,7 @@ const PROJECTS_DATA = [
     category: 'HISTORICAL ORIGIN',
     title: 'Covoiturage.fr (2006)',
     subtitle: 'The Web 2.0 Genesis of Community Carpooling',
-    image: '/src/assets/images/blablacar_journey_concept_1792515909674.jpg',
+    image: './assets/images/blablacar_journey_concept_1792515909674.jpg',
     description: 'The bootstrapped prototype that proved strangers would ride together if verified identities and transparent cost-sharing mechanisms were guaranteed.',
     tags: ['Pioneer MVP', 'Cold Start Solution', 'Paris-Vendée'],
     url: 'https://newsroom.blablacar.com/about-us/story'
