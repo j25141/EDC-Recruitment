@@ -17,6 +17,7 @@ import { Footer } from './components/Footer';
 import { SourcesDisclosureModal } from './components/SourcesDisclosureModal';
 import { FloatingChatButton } from './components/FloatingChatButton';
 import { AmbientBackground } from './components/AmbientBackground';
+import { CursorRibbon } from './components/CursorRibbon';
 import { Check } from 'lucide-react';
 
 export default function App() {
@@ -33,14 +34,17 @@ export default function App() {
       {/* Interactive Physics Ambient Network Canvas */}
       <AmbientBackground />
 
+      {/* Signature Glowing Green Neon Ribbon Following Cursor */}
+      <CursorRibbon />
+
       {/* Floating Left Sidebar Dock matching video */}
       <LeftDock onCopySuccess={handleCopySuccess} />
 
       {/* Floating Centered Pill Navigation matching video */}
       <AelradiNavbar onOpenSources={() => setSourcesModalOpen(true)} />
 
-      {/* Main Sections */}
-      <main className="flex-1">
+      {/* Main Sections (Rendered cleanly on top of background CursorRibbon) */}
+      <main className="flex-1 relative z-10">
         {/* Bento Grid Home (Frame 00:00) */}
         <BentoHome />
 
